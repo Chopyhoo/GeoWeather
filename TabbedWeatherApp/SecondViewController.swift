@@ -8,18 +8,31 @@
 
 import UIKit
 
-class SecondViewController: UIViewController {
+class SecondViewController: UIViewController, UITableViewDelegate {
 
+    @IBOutlet weak var historyTableView: UITableView!
+    
+    private var dataSourceModel: WeatherDataSource?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        dataSourceModel = WeatherDataSource()
+        historyTableView.delegate = self
+        historyTableView.dataSource = dataSourceModel!
+        historyTableView.rowHeight = UITableViewAutomaticDimension
+        historyTableView.estimatedRowHeight = 50
+        historyTableView.tableFooterView = UIView()
+        historyTableView.reloadData()
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        historyTableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
 }
 
