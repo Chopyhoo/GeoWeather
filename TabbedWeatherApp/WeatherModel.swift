@@ -28,7 +28,7 @@ class WeatherModel {
             request.predicate = predicate
             let result = try context.fetch(request)
             if (result.count > 0){
-                let weather = Weather(city: result[0].city, temperature: result[0].temperature, status: result[0].status)
+                let weather = Weather(city: result[0].city, temperature: result[0].temperature, status: result[0].status, longitude: result[0].longitude, latitude: result[0].latitude)
                 completion(weather)
             } else {
                 let dataReceiver = ApiDataReceiver.shared
@@ -39,6 +39,8 @@ class WeatherModel {
                         managedObject.setValue(weather!.city, forKey: "city")
                         managedObject.setValue(weather!.status, forKey: "status")
                         managedObject.setValue(weather!.temperature, forKey: "temperature")
+                        managedObject.setValue(weather!.longitude, forKey: "longitude")
+                        managedObject.setValue(weather!.latitude, forKey: "latitude")
                         print(managedObject)
                         do {
                             try context.save()

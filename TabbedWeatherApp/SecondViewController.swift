@@ -34,5 +34,16 @@ class SecondViewController: UIViewController, UITableViewDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "showAdditionalInfo", sender: indexPath.row)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showAdditionalInfo" {
+            let vc = segue.destination as! AdditionalInfoController
+                vc.weather = (dataSourceModel?.getAdditionalInfo(index: sender as! Int))!
+        }
+    }
 }
 

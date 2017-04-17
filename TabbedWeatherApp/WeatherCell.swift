@@ -11,6 +11,7 @@ import UIKit
 class WeatherCell: UITableViewCell {
     @IBOutlet weak var cityName: UILabel!
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var temperature: UILabel!
-    @IBOutlet weak var status: UILabel!
+    @IBOutlet weak var longitude: UILabel!
+    @IBOutlet weak var latitude: UILabel!
+    
 }

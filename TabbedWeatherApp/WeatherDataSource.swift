@@ -38,22 +38,25 @@ class WeatherDataSource: NSObject, UITableViewDataSource {
         dateFormatter.dateFormat = "dd-MM-yyyy HH:mm"
         
         super.init()
-        
-        
+    }
+    
+    func getAdditionalInfo(index: Int) -> Weather {
+        let weather = Weather(weatherData: weatherData[index])
+        return weather
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as! WeatherCell
-        
-        //cell.textLabel?.text = getCellData(index: indexPath.row)
+
         cell.cityName.text = weatherData[indexPath.row].city
         
         if let date = weatherData[indexPath.row].date {
             cell.date.text = dateFormatter.string(from: date as Date)
         }
         
-        cell.status.text = weatherData[indexPath.row].status
-        cell.temperature.text = "\(round(weatherData[indexPath.row].temperature*10)/10) ℃"
+        cell.longitude.text = "lon: \(weatherData[indexPath.row].longitude)"
+        cell.latitude.text = "lat: \(weatherData[indexPath.row].latitude)"
+        //cell.latitude.text = "\(round(weatherData[indexPath.row].temperature*10)/10) ℃"
 
         
         return cell

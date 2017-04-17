@@ -17,18 +17,36 @@ struct Weather: Mappable {
     
     var status: String?
     
+    var latitude: Double?
+    
+    var longitude: Double?
+    
+    init() {}
+    
     init?(map: Map) {}
     
-    init(city: String?, temperature: Double?, status: String?) {
+    init(city: String?, temperature: Double?, status: String?, longitude: Double?, latitude: Double?) {
         self.city = city
         self.temperature = temperature
         self.status = status
+        self.longitude = longitude
+        self.latitude = latitude
+    }
+    
+    init(weatherData: WeatherData) {
+        self.city = weatherData.city
+        self.temperature = weatherData.temperature
+        self.status = weatherData.status
+        self.longitude = weatherData.longitude
+        self.latitude = weatherData.latitude
     }
     
     mutating func mapping(map: Map) {
         city <- map["name"]
         temperature <- map["main.temp"]
         status <- map["weather.0.main"]
+        latitude <- map["coord.lat"]
+        longitude <- map["coord.lon"]
     }
 
 }

@@ -15,6 +15,7 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate  {
     @IBOutlet weak var tempLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var adviseLabel: UILabel!
+    @IBOutlet weak var coordinatesLabel: UILabel!
     
     
     
@@ -84,6 +85,9 @@ class FirstViewController: UIViewController, CLLocationManagerDelegate  {
                     self!.adviseLabel.text = "I don't know what to suggest"
                     self!.view.backgroundColor = UIColor(red: 126/255, green: 192/255, blue: 238/255, alpha: 0.8)
                 }
+                let longitude = (round(weather.longitude!)*10)/10
+                let latitude = (round(weather.latitude!)*10)/10
+                self!.coordinatesLabel.text = "lon: \(longitude) lat: \(latitude)"
             }
         }
     }

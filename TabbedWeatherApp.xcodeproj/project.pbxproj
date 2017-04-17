@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9126E39E1EA00EFC0013AB9B /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9126E39D1EA00EFC0013AB9B /* WeatherCell.swift */; };
+		91289F471EA4DFB600606F0C /* AdditionalInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91289F461EA4DFB600606F0C /* AdditionalInfoController.swift */; };
 		913E59931E9E89C100F2C109 /* WeatherModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E59921E9E89C100F2C109 /* WeatherModel.swift */; };
 		913E59951E9E949800F2C109 /* NetworkModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 913E59941E9E949800F2C109 /* NetworkModels.swift */; };
 		914C67491E9E4A3C00BD0E3C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 914C67481E9E4A3C00BD0E3C /* AppDelegate.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		5BA76C85F4CDEB217128490B /* Pods-TabbedWeatherApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TabbedWeatherApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TabbedWeatherApp/Pods-TabbedWeatherApp.release.xcconfig"; sourceTree = "<group>"; };
 		9126E39D1EA00EFC0013AB9B /* WeatherCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		91289F461EA4DFB600606F0C /* AdditionalInfoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalInfoController.swift; sourceTree = "<group>"; };
 		913E59921E9E89C100F2C109 /* WeatherModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherModel.swift; sourceTree = "<group>"; };
 		913E59941E9E949800F2C109 /* NetworkModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkModels.swift; sourceTree = "<group>"; };
 		914C67451E9E4A3C00BD0E3C /* TabbedWeatherApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TabbedWeatherApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,6 +76,7 @@
 				914C674A1E9E4A3C00BD0E3C /* FirstViewController.swift */,
 				914C674C1E9E4A3C00BD0E3C /* SecondViewController.swift */,
 				9126E39D1EA00EFC0013AB9B /* WeatherCell.swift */,
+				91289F461EA4DFB600606F0C /* AdditionalInfoController.swift */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91289F471EA4DFB600606F0C /* AdditionalInfoController.swift in Sources */,
 				914C674D1E9E4A3C00BD0E3C /* SecondViewController.swift in Sources */,
 				914C67621E9E72DF00BD0E3C /* WeatherHistory.xcdatamodeld in Sources */,
 				9126E39E1EA00EFC0013AB9B /* WeatherCell.swift in Sources */,
